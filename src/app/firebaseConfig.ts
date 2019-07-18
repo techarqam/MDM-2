@@ -1,9 +1,9 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyDTx_W2SRXzOGJxwcr49J6koSX9A1DvEIU",
-    authDomain: "mdm-master.firebaseapp.com",
-    databaseURL: "https://mdm-master.firebaseio.com",
-    projectId: "mdm-master",
-    storageBucket: "mdm-master.appspot.com",
-    messagingSenderId: "365845133378",
-    appId: "1:365845133378:web:ebaeed034543c354"
+    apiKey: "AIzaSyA0uYkZMOtM6fa71cI-EdIOpsmhBQOj7r4",
+    authDomain: "atomic-5c83d.firebaseapp.com",
+    databaseURL: "https://atomic-5c83d.firebaseio.com",
+    projectId: "atomic-5c83d",
+    storageBucket: "",
+    messagingSenderId: "437700734483",
+    appId: "1:437700734483:web:c7f204f1cd47a697"
 }

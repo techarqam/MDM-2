@@ -4,11 +4,12 @@ import { ToastController } from '@ionic/angular';
 @Injectable({
   providedIn: 'root'
 })
-export class CommonServiceService {
+export class CommonService {
 
   constructor(
     public toastCtrl: ToastController,
   ) { }
+
 
 
   async presentToast(msg) {
@@ -20,4 +21,5 @@ export class CommonServiceService {
     });
     toast.present();
   }
+
 }

@@ -1,0 +1,56 @@
+<app-main-header name="All Masters"></app-main-header>
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <!-- size-md="10" offset-md="1"> -->
+
+        <!-- <ion-card>
+          <ion-card-content> -->
+
+
+        <ion-row>
+          <ion-col>
+            <ion-button class="ion-float-end" (click)="addMaster()">
+              <ion-icon name="add" class="ion-margin-end"></ion-icon>
+              Add Master
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" size-md="4" *ngFor="let m of masters | async " (click)="gtMasterDetails(m.payload.doc.id)">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>
+                  {{m.payload.doc.data().masterName}}
+                </ion-card-title>
+                <ion-card-content>
+                  <ion-item lines="none">
+                    <p slot="start">Collection Name</p>
+                    <p slot="end">{{m.payload.doc.id}}</p>
+                  </ion-item>
+
+                </ion-card-content>
+              </ion-card-header>
+              <p class="ion-float-right ion-margin-end">{{m.payload.doc.data().timestamp | date : 'short' }}</p>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+
+
+
+
+
+
+        <!-- </ion-card-content>
+        </ion-card> -->
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

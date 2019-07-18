@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MdmAddSlaveComponent } from './mdm-add-slave.component';
+import { ModalHeaderComponent } from './modal-header.component';
 
-describe('MdmAddSlaveComponent', () => {
-  let component: MdmAddSlaveComponent;
-  let fixture: ComponentFixture<MdmAddSlaveComponent>;
+describe('ModalHeaderComponent', () => {
+  let component: ModalHeaderComponent;
+  let fixture: ComponentFixture<ModalHeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MdmAddSlaveComponent ],
+      declarations: [ ModalHeaderComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MdmAddSlaveComponent);
+    fixture = TestBed.createComponent(ModalHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MdmSlaveComponent } from './mdm-slave.component';
+import { AddFieldsComponent } from './add-fields.component';
 
-describe('MdmSlaveComponent', () => {
-  let component: MdmSlaveComponent;
-  let fixture: ComponentFixture<MdmSlaveComponent>;
+describe('AddFieldsComponent', () => {
+  let component: AddFieldsComponent;
+  let fixture: ComponentFixture<AddFieldsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MdmSlaveComponent ],
+      declarations: [ AddFieldsComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MdmSlaveComponent);
+    fixture = TestBed.createComponent(AddFieldsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

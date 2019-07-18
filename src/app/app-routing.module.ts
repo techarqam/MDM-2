@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { MdmMasterComponent } from './Components/mdm-master/mdm-master.component';
-import { MdmSlaveComponent } from './Components/mdm-slave/mdm-slave.component';
+import { ViewMastersComponent } from './Components/Main/view-masters/view-masters.component';
+import { ViewFieldsComponent } from './Components/Main/view-fields/view-fields.component';
+import { AddFieldsComponent } from './Components/Main/add-fields/add-fields.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'mdm-master',
+    redirectTo: 'all-masters',
     pathMatch: 'full'
   },
   {
-    path: 'mdm-master',
-    component: MdmMasterComponent,
+    path: 'all-masters',
+    component: ViewMastersComponent,
   },
   {
-    path: "mdm-slave/:id",
-    component: MdmSlaveComponent,
+    path: 'add-fields',
+    component: AddFieldsComponent,
+  },
+  {
+    path: 'master-details/:mastername',
+    component: ViewFieldsComponent,
   },
 ];
 

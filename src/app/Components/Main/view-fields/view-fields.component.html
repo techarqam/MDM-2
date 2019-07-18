@@ -1,0 +1,83 @@
+<app-main-header name="{{master.masterName | titlecase}}"></app-main-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="8">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              {{master.masterName | titlecase}} Data
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+
+            <ion-item *ngFor="let s of slaveData | async ">
+              <p slot="start">{{s.payload.doc.data().name}}</p>
+              <ion-button fill="clear" slot="end" color="danger" (click)="delSlaveConfirm(s.payload.doc.id,s.payload.doc.data())">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
+            </ion-item>
+
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-row>
+                <ion-col>
+                  <ion-button (click)="addField()" class="ion-float-end">Add Field</ion-button>
+                </ion-col>
+              </ion-row>
+              <ion-card-header>
+                <ion-card-title>
+                  {{master.masterName | titlecase}} Fields
+                </ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <form (ngSubmit)="onSubmit()" [formGroup]="mdmForm">
+                  <ion-item *ngFor="let question of questions">
+                    <ion-label position="floating">{{question.label}}</ion-label>
+                    <div style="width: 100%;" [ngSwitch]="question.controlType">
+                      <ion-input *ngSwitchCase="'textbox'" [formControlName]="question.key" [id]="question.key"
+                        [type]="question.type">
+                      </ion-input>
+
+                      <ion-select *ngSwitchCase="'dropdown'" [formControlName]="question.key">
+                        <ion-select-option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}
+                        </ion-select-option>
+                      </ion-select>
+
+                      <ion-textarea *ngSwitchCase="'textarea'" [formControlName]="question.key" [id]="question.key">
+                      </ion-textarea>
+
+
+                      <ion-datetime *ngSwitchCase="'dateTime'" [displayFormat]="question.displayFormat"
+                        [pickerFormat]="question.pickerformat" [formControlName]="question.key" [id]="question.key">
+                      </ion-datetime>
+
+
+                      <ion-checkbox *ngSwitchCase="'checkbox'" [formControlName]="question.key"
+                        [checked]="question.value" color="primary"></ion-checkbox>
+
+
+                      <!-- Async validations  -->
+                      <!-- <div *ngIf="mdmForm?.controls[question.key].invalid && (mdmForm.controls[question.key].dirty || f1Submitted)">
+                            <div *ngIf="mdmForm?.controls[question.key].errors.required">{{question.label}} is required</div>
+                          </div> -->
+
+                    </div>
+                  </ion-item>
+                  <ion-button class="ion-float-right" type="submit">Save</ion-button>
+                </form>
+
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

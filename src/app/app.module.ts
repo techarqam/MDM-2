@@ -11,22 +11,35 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ReactiveFormsModule } from "@angular/forms";
-import { MdmMasterComponent } from './Components/mdm-master/mdm-master.component';
-import { MdmMainService } from './Services/MDM/mdmMain/mdm-main.service';
-import { MdmSlaveComponent } from './Components/mdm-slave/mdm-slave.component';
 import { BackHeaderComponent } from './ExtraComps/back-header/back-header.component';
-import { MdmAddSlaveComponent } from './Components/mdm-add-slave/mdm-add-slave.component';
+import { MainServiceService } from './Services/mainService/main-service.service';
+import { MainHeaderComponent } from './ExtraComps/main-header/main-header.component';
+import { ViewMastersComponent } from './Components/Main/view-masters/view-masters.component';
+import { AddMastersComponent } from './Components/Main/add-masters/add-masters.component';
+import { ViewFieldsComponent } from './Components/Main/view-fields/view-fields.component';
+import { AddFieldsComponent } from './Components/Main/add-fields/add-fields.component';
+import { ModalHeaderComponent } from './ExtraComps/modal-header/modal-header.component';
+import { CommonService } from './Services/commonService/common.service';
 @NgModule({
   declarations: [
     AppComponent,
-    MdmMasterComponent,
-    MdmSlaveComponent,
+    // Main Components
+    ViewMastersComponent,
+    AddMastersComponent,
+    ViewFieldsComponent,
+    AddFieldsComponent,
+    //Extra Components
     BackHeaderComponent,
-    MdmAddSlaveComponent,
+    MainHeaderComponent,
+    ModalHeaderComponent,
   ],
   entryComponents: [
+    // Main Components
+    AddMastersComponent,
+    //Extra Components
     BackHeaderComponent,
-    MdmAddSlaveComponent,
+    MainHeaderComponent,
+    ModalHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +53,8 @@ import { MdmAddSlaveComponent } from './Components/mdm-add-slave/mdm-add-slave.c
   providers: [
     StatusBar,
     SplashScreen,
-    MdmMainService,
+    MainServiceService,
+    CommonService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

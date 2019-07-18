@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MdmMasterComponent } from './mdm-master.component';
+import { ViewMastersComponent } from './view-masters.component';
 
-describe('MdmMasterComponent', () => {
-  let component: MdmMasterComponent;
-  let fixture: ComponentFixture<MdmMasterComponent>;
+describe('ViewMastersComponent', () => {
+  let component: ViewMastersComponent;
+  let fixture: ComponentFixture<ViewMastersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MdmMasterComponent ],
+      declarations: [ ViewMastersComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MdmMasterComponent);
+    fixture = TestBed.createComponent(ViewMastersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
